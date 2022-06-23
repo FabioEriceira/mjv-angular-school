@@ -1,0 +1,21 @@
+#menu ul li { display: inline; }
+
+#menu a:hover{
+    background-color: #e0dfdf;
+    font-size: large;
+}
+
+#menu ul{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 15px;
+    background-color:#EDEDED;
+    list-style: none;
+}
+
+#menu ul li a {
+	padding: 15px 15px ;
+	/* visual do link */
+	color: #333;
+	text-decoration: none;
+}
