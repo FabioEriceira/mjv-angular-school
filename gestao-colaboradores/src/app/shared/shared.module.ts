@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RedDirective } from './directives/red.directive';
+import { BlueDirective } from './directives/blue.directive';
+
 
 
 
@@ -10,7 +12,8 @@ import { RedDirective } from './directives/red.directive';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    RedDirective
+    RedDirective,
+    BlueDirective
   ],
   imports: [
     CommonModule
