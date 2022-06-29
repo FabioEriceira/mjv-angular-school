@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ListagemComponent } from './features/colaboradores/listagem/listagem.component';
 import { FeaturesModule } from './features/features.module';
+import { SellModule } from './features/sell/sell.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     SharedModule,
-    FeaturesModule
+    FeaturesModule,
+    SellModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,30 @@
+
+<h3 class="posicao"> {{ titulo }}</h3>
+
+<div class="container posicaoProdutos">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let produto of produtos">
+        <div class="card" style="width: 14rem;" *ngIf="exibe===true? produto.quantidade > 0 : true ">  
+            <div class="card-body">
+                <img src="{{ produto.imagem }}" width="150px">
+                <h6 class="card-title ">Descricao do produto {{ produto.descricao }}</h6>
+                <p class="card-text">Preço: {{ produto.preco | currency: 'BRL' }} </p>
+                <h6>Desconto: {{produto.desconto | percent}} </h6>
+                <p>Valor com desconto: {{ precoComDesconto(produto.preco, produto.desconto) | currency: 'BRL'}}</p>
+                <p [ngClass]="{ 'em-estoque': produto.quantidade > 0, 'falta-estoque': produto.quantidade <= 0 }"  
+                             class="card-text">Quantidade {{ produto.quantidade }}</p>
+                <a (click)="comprou()" href="#" class="d-flex justify-content-center btn btn-primary">Comprar</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  <hr>
+    <br>
+  
+    <div  class="toggle">
+      <input (click)="exibeSimNao()" type="checkbox" id="foo">
+      <label for="foo"></label>
+      <p>Exibir todos os produtos</p>
+  </div>
+    
+</div>
