@@ -1,11 +1,11 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListagemComponent } from './features/colaboradores/listagem/listagem.component';
-import { FeaturesModule } from './features/features.module';
-import { SellModule } from './features/sell/sell.module';
-import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './features/home/home.module';
+import { LoginModule } from './features/login/login.module';
 
 // estes import aqui serve para formatação dos pipes
 import { LOCALE_ID } from '@angular/core';
@@ -19,10 +19,11 @@ registerLocaleData(localePt);
   ],
   imports: [
     BrowserModule,
-    SharedModule,
-    FeaturesModule,
-    SellModule
+    AppRoutingModule,
+    HomeModule,
+    LoginModule
   ],
+  
   
   // esta configuração do provide é para a formatação do pipes do pt-br junto com os imports acima.
   providers: [
@@ -30,8 +31,9 @@ registerLocaleData(localePt);
       provide: LOCALE_ID,
       useValue: "pt-BR"
     }
-
+  
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

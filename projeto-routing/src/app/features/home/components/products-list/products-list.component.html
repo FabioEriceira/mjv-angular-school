@@ -14,20 +14,19 @@
                 <p>Valor com desconto: {{ precoComDesconto(produto.preco, produto.desconto) | currency: 'BRL'}}</p>
                 <p [ngClass]="{ 'em-estoque': produto.quantidade > 0, 'falta-estoque': produto.quantidade <= 0 }"  
                              class="card-text">Quantidade {{ produto.quantidade }}</p>
-                <a (click)="comprou()" href="#" class="d-flex justify-content-center btn btn-primary">Comprar</a>
+                <button (click)="detalhesProduto(produto.id)" href="#" class="d-flex justify-content-center btn btn-primary">Comprar</button>
             </div>
         </div>
       </div>
     </div>
   <hr>
-    <br>
+  <br>
   
-    <div  class="toggle">
-      <input (click)="exibeSimNao()" type="checkbox" id="foo">
-      <label for="foo"></label>
-      <p>Exibir todos os produtos</p>
-      <h6>Telefone da Loja: {{ telefone | phone }}</h6>
-
+  <div  class="toggle">
+    <input (click)="exibeSimNao()" type="checkbox" id="foo">
+    <label for="foo"></label>
+    <p>Exibir todos os produtos</p>
+    <h6>Telefone da Loja: {{ telefone | phone }}</h6>
   </div>
     
 </div>

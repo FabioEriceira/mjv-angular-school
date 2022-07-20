@@ -1,0 +1,14 @@
+<app-header></app-header>
+<br><br><br>
+<div ng-if="product">
+    <div class="card-body">
+        <img src="{{ product?.imagem }}" width="150px">
+        <h6 class="card-title ">Descricao do produto:</h6>
+        <h6>{{ product?.descricao }}</h6> 
+        <p class="card-text">Preço: {{ product?.preco | currency: 'BRL' }} </p>
+        <h6>Desconto: {{product?.desconto | percent}} </h6>
+        <p [ngClass]="{ 'em-estoque': product?.disponivel, 'falta-estoque': !product?.disponivel }"  
+                        class="card-text">Quantidade {{ product?.disponivel? 'Em estoque':'Produto em falta' }}</p>
+    </div>
+</div>
+<app-footer></app-footer>

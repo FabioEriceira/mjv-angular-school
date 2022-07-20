@@ -2,29 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { RedDirective } from './directives/red.directive';
-import { BlueDirective } from './directives/blue.directive';
+import { RouterModule } from '@angular/router';
 import { PhonePipe } from './pipes/phone.pipe';
-
-
-
+import { BlueDirective } from './directives/blue.directive';
+import { RedDirective } from './directives/red.directive';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    RedDirective,
+    PhonePipe,
     BlueDirective,
-    PhonePipe
+    RedDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     FooterComponent,
     PhonePipe
-
   ]
 })
 export class SharedModule { }

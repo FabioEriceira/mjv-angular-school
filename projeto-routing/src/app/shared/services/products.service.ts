@@ -1,23 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Data } from '@angular/router';
-import { Product } from '../../models/product.model';
+import { Injectable } from '@angular/core';
+import { Product } from 'src/app/features/home/models/product.model';
 
-@Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class ProductsComponent implements OnInit {
+export class ProductsService {
 
-  titulo: string  = "Produtos em:";
-  exibe: boolean = true;
-  dataHoje = new Date();
-  telefone = "11988855959";
-
-  exibeProduto = false;
-
-   produtos: Array<Product> = [
+  products: Array<Product> = [
     {
+      id:1,
       descricao: "Fone de Ouvido Sem Fio Philips SHB3175WT/00 com Bass+, Haste Dobrável - Branco",
       preco: 170.00,
       quantidade: 1,
@@ -26,6 +17,7 @@ export class ProductsComponent implements OnInit {
       disponivel: true
     },
     {
+      id:2,
       descricao: "AirPods com Estojo de Recarga Apple",
       preco: 1270.00,
       quantidade: 0,
@@ -34,6 +26,7 @@ export class ProductsComponent implements OnInit {
       disponivel: true
     },
     {
+      id:3,
       descricao: "Fone de Ouvido Bluetooth Multilaser PH247 Pop - Branco",
       preco: 89.00,
       quantidade: 1,
@@ -42,6 +35,7 @@ export class ProductsComponent implements OnInit {
       disponivel: true
     },
     {
+      id:4,
       descricao: "Fones de ouvido Bluetooth JBL Tune 125TWS – Preto",
       preco: 500.00,
       quantidade: 0,
@@ -49,22 +43,16 @@ export class ProductsComponent implements OnInit {
       desconto: 0,
       disponivel: false
     }
-  ]
+  ];
 
   constructor() { }
 
-  ngOnInit(): void {
+  getProducts(){
+    return this.products;
   }
 
-  exibeSimNao(){
-    this.exibe = !this.exibe;
+  getbyId(id: number){
+    return this.products.find((product) => product.id === id);
   }
-
-  comprou(){
-   alert("Produto comprado");
-  }
-
-  precoComDesconto(preco: number, desconto: number){
-    return preco * (1-desconto)
-  }
+    
 }
